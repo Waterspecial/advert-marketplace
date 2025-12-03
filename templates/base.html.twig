@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+
+<body>
+<header class="navbar">
+    <a class="nav-link" href="{{ path('app_advert_index') }}">Home</a>
+
+    {% if app.user %}
+        <a class="nav-link" href="{{ path('app_advert_create') }}">Create Advert</a>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="nav-link" href="{{ path('admin_dashboard') }}">Manage Users</a>
+        {% endif %}
+
+        <span class="nav-user">Hi {{ app.user.email }}</span>
+
+        <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+    {% else %}
+        <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+        <a class="nav-link" href="{{ path('app_register') }}">Register</a>
+    {% endif %}
+</header>
+
+<main class="container">
+    {% block body %}{% endblock %}
+</main>
+
+</body>
+</html>

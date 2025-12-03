@@ -1,0 +1,32 @@
+security:
+    password_hashers:
+        App\Entity\User:
+            algorithm: auto
+
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            provider: app_user_provider
+            form_login:
+                login_path: app_login
+                check_path: app_login
+                username_parameter: email
+                password_parameter: password
+            logout:
+                path: app_logout
+                target: app_advert_index
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/advert/create, roles: ROLE_USER }
+        - { path: ^/advert/\d+/edit, roles: ROLE_USER }
+        - { path: ^/advert/\d+/delete, roles: ROLE_USER }

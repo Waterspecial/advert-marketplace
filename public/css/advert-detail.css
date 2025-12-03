@@ -1,0 +1,189 @@
+/* Main container */
+
+.view-container {
+    max-width: 900px;
+    margin: 30px 0;
+}
+
+.back-button-wrapper {
+    margin-bottom: 20px;
+}
+
+.back-button {
+    display: flex;
+    gap: 8px;
+    text-decoration: none;
+    align-items: center;
+    width: fit-content;
+    color: #3949AB;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.advert-container {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Image area */
+.advert-image-area {
+    background: linear-gradient(135deg, #e5e8ff, #f4eaff);
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advert-emoji {
+    font-size: 70px;
+}
+
+/* Content box */
+.advert-content {
+    padding: 25px;
+}
+
+/* Title + price */
+.advert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.advert-title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 8px;
+    color: #424242;
+    font-weight: bold;
+}
+
+.advert-price {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #4a32ff;
+}
+
+/* Category tag */
+.advert-category {
+    background: #ebe8ff;
+    color: #4a32ff;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 8px 0;
+    width: fit-content;
+
+}
+
+.advert-location {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.location-icon {
+    margin-right: 5px;
+}
+
+.desc {
+    border-top: 1px solid #E0E0E0;
+    margin: 12px 0;
+    padding: 12px 0;
+}
+/* Section titles */
+.section-title {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+/* Description text */
+.advert-description {
+    margin-top: 5px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Seller box */
+.seller-box {
+    border-top: 1px solid #E0E0E0;
+    margin: 12px 0;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seller-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.seller-avatar {
+    font-size: 35px;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.seller-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.seller-posted {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Buttons */
+.contact-btn {
+    background: #4a32ff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.advert-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.edit-btn {
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background: #4a6bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+form{
+    width: 100%;
+}
+
+.delete-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff4a4a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}

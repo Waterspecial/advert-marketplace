@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create New Advert{% endblock %}
+
+{% block body %}
+
+    <link rel="stylesheet" href="/css/advert-new.css">
+
+    <h1 class="page-title">Create New Advert</h1>
+
+    <div class="form-card">
+
+        {{ form_start(form, { 'attr': { 'enctype': 'multipart/form-data' } }) }}
+
+        <div class="form-group">
+            {{ form_label(form.title) }}
+            {{ form_widget(form.title, { 'attr': {'class': 'input'} }) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.category) }}
+            {{ form_widget(form.category, { 'attr': {'class': 'input'} }) }}
+        </div>
+
+        <div class="row">
+            <div class="form-group half">
+                {{ form_label(form.price) }}
+                {{ form_widget(form.price, { 'attr': {'class': 'input'} }) }}
+            </div>
+
+            <div class="form-group half">
+                {{ form_label(form.location) }}
+                {{ form_widget(form.location, { 'attr': {'class': 'input'} }) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description, { 'attr': {'class': 'textarea'} }) }}
+        </div>
+
+{#        <div class="form-group">#}
+{#            {{ form_label(form.imageFile) }}#}
+{#            {{ form_widget(form.imageFile, { 'attr': {'class': 'file-upload'} }) }}#}
+{#        </div>#}
+
+        <div class="button-row">
+            <button type="submit" class="btn-primary">Publish Advert</button>
+            <a href="/" class="btn-secondary">Cancel</a>
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

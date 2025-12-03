@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .auth-page {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f7f7fb;
+            padding: 40px 20px;
+            font-family: Inter, sans-serif;
+        }
+
+        .auth-card {
+            width: 480px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .auth-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: #1a1a1a;
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #374151;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 18px;
+            background: #fff;
+        }
+
+        .form-control:focus {
+            border-color: #6366f1;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px 0;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #4338ca;
+        }
+
+        .meta-text {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .meta-text a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="auth-page">
+        <div class="auth-card">
+
+            <div class="auth-title">Register</div>
+
+            {{ form_start(registrationForm) }}
+
+            <label class="form-label">Email</label>
+            {{ form_widget(registrationForm.email, { attr: { class: 'form-control', placeholder: 'your@email.com' } }) }}
+
+            <label class="form-label">Password</label>
+            {{ form_widget(registrationForm.password, { attr: { class: 'form-control', placeholder: '••••••••' } }) }}
+
+            <button class="btn-primary" type="submit">Register</button>
+
+            {{ form_end(registrationForm) }}
+
+            <div class="meta-text">
+                Already have an account?
+                <a href="{{ path('app_login') }}">Login</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

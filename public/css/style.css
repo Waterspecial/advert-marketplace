@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+    h1,h2, h3, p {
+        margin: 0;
+    }
+}
+
+.navbar {
+    background: #222;
+    padding: 20px 20px;
+}
+
+.nav-link {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-user {
+    color: #bbb;
+    margin-right: 20px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 8px;
+}

@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ advert.title }}{% endblock %}
+
+{% block body %}
+
+    <link rel="stylesheet" href="/css/advert-detail.css">
+
+    <div class="view-container">
+    <!-- Back button -->
+    <div class="back-button-wrapper">
+        <a href="{{ path('app_advert_index') }}" class="back-button"> <p>←</p>  Back to Listings</a>
+    </div>
+
+    <div class="advert-container">
+        <!-- Image Area -->
+        <div class="advert-image-area">
+            <span class="advert-emoji">📷</span>
+        </div>
+
+        <!-- Full Content -->
+        <div class="advert-content">
+
+            <div class="advert-header">
+                <h1 class="advert-title">{{ advert.title }}</h1>
+                <span class="advert-price">£{{ advert.price }}</span>
+            </div>
+
+            <p class="advert-category">{{ advert.category }}</p>
+
+            <div class="advert-location">
+                <span class="location-icon">📍</span> {{ advert.location }}
+            </div>
+
+            <div class="desc">
+            <h2 class="section-title">Description</h2>
+            <p class="advert-description">
+                {{ advert.description }}
+            </p>
+            </div>
+
+            <!-- Seller Section -->
+            <div class="seller-box">
+                <div class="seller-left">
+                    <div>
+                        <div class="seller-name">{{ advert.user.email }}</div>
+                        <div class="seller-posted">Posted on {{ advert.createdAt|date('d M Y') }}</div>
+                    </div>
+                </div>
+
+                <button class="contact-btn">Contact Seller</button>
+            </div>
+
+            <!-- Action Buttons -->
+            {% if is_granted('ROLE_MODERATOR') or app.user == advert.user %}
+                <div class="advert-actions">
+                    <a href="{{ path('app_advert_edit', {id: advert.id}) }}" class="edit-btn">Edit</a>
+                    <form action="{{ path('app_advert_delete', {id: advert.id}) }}" method="post" onsubmit="return confirm('Delete?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ advert.id) }}">
+                        <button class="delete-btn">Delete</button>
+                    </form>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+    </div>
+
+
+
+{% endblock %}

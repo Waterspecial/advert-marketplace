@@ -1,0 +1,71 @@
+.page-title {
+    font-size: 32px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 900px;
+    font-weight: bold;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 48px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input, .textarea, .file-upload, select {
+    width: 100%;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.textarea {
+    height: 120px;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    /*width: 95%;*/
+
+}
+
+.half {
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background: #5733ff;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #ddd;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #444;
+    font-size: 16px;
+}

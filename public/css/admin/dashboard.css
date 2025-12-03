@@ -1,0 +1,165 @@
+body { background:#f5f6fc; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+.container-admin {
+    max-width:1100px;
+    margin:30px auto;
+    padding:0 20px 40px;
+}
+
+.admin-header-row {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+}
+
+.admin-title {
+    font-size:28px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.admin-badge {
+    font-size:13px;
+    color:#6b7280;
+    background:#fef9c3;
+    border-radius:10px;
+    padding:6px 10px;
+    border:1px solid #facc15;
+    margin-top:8px;
+}
+
+.cards-row {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    margin-top:22px;
+    margin-bottom:26px;
+}
+
+.stat-card {
+    background:#fff;
+    border-radius:14px;
+    padding:18px 20px;
+    box-shadow:0 10px 25px rgba(15,23,42,0.05);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.stat-title {
+    font-size:13px;
+    font-weight:500;
+    color:#6b7280;
+    margin-bottom:6px;
+}
+
+.stat-value {
+    font-size:24px;
+    font-weight:700;
+    color:#111827;
+}
+
+.stat-icon {
+    font-size:26px;
+    color:#4f46e5;
+}
+
+.section-title {
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.admin-card {
+    background:#fff;
+    border-radius:14px;
+    padding:18px 20px;
+    box-shadow:0 10px 25px rgba(15,23,42,0.05);
+}
+
+.data-table {
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+
+.data-table thead {
+    background:#f9fafb;
+}
+
+.data-table th,
+.data-table td {
+    padding:12px 14px;
+    border-bottom:1px solid #eef2f7;
+    text-align:left;
+}
+
+.data-table th {
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:#9ca3af;
+    font-weight:600;
+}
+
+.user-cell {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.user-avatar {
+    width:32px;
+    height:32px;
+    border-radius:999px;
+    background:#e5e7eb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#6b7280;
+    font-size:18px;
+}
+
+.role-badge {
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+.role-admin { background:#fde2e1; color:#d64545; }
+.role-moderator { background:#e1ecff; color:#3b63f6; }
+.role-user { background:#e5e7eb; color:#374151; }
+
+.form-select {
+    padding:6px 10px;
+    border-radius:8px;
+    border:1px solid #e5e7eb;
+    font-size:13px;
+    color:#374151;
+}
+
+.btn-action {
+    padding:6px 12px;
+    border-radius:8px;
+    background:#4f46e5;
+    color:#fff;
+    border:none;
+    font-size:13px;
+    font-weight:500;
+    cursor:pointer;
+    transition:background 0.15s;
+}
+.btn-action:hover { background:#4338ca; }
+
+.btn-delete {
+    color:#ef4444;
+    font-size:16px;
+    font-weight: bolder;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.alerts { margin-top:16px; }
