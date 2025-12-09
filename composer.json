@@ -12,6 +12,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.7",
         "doctrine/migrations": "^3.9",
         "doctrine/orm": "^3.5",
+        "knplabs/knp-paginator-bundle": "^6.10",
         "symfony/asset": "7.3.*",
         "symfony/console": "7.3.*",
         "symfony/dotenv": "7.3.*",
@@ -22,7 +23,9 @@
         "symfony/runtime": "7.3.*",
         "symfony/security-bundle": "7.3.*",
         "symfony/stimulus-bundle": "^2.31",
+        "symfony/translation": "7.3.*",
         "symfony/twig-bundle": "7.3.*",
+        "symfony/uid": "7.3.*",
         "symfony/ux-turbo": "^2.31",
         "symfony/validator": "7.3.*",
         "symfony/yaml": "7.3.*"

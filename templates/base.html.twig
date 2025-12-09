@@ -11,16 +11,16 @@
 
 <body>
 <header class="navbar">
-    <a class="nav-link" href="{{ path('app_advert_index') }}">Home</a>
+    <a class="nav-link" href="{{ path('app_public_adverts') }}">Home</a>
 
     {% if app.user %}
-        <a class="nav-link" href="{{ path('app_advert_create') }}">Create Advert</a>
+        <a class="nav-link" href="{{ path('app_user_adverts') }}">My Advert</a>
 
         {% if is_granted('ROLE_ADMIN') %}
             <a class="nav-link" href="{{ path('admin_dashboard') }}">Manage Users</a>
         {% endif %}
 
-        <span class="nav-user">Hi {{ app.user.email }}</span>
+{#        <span class="nav-user">Hi {{ app.user.email }}</span>#}
 
         <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
     {% else %}

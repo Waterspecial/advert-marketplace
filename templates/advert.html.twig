@@ -6,33 +6,6 @@
     <style>
         /* Container */
 
-        /* Header Row */
-        .header-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
-
-        /* Create Button */
-        .create-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .create-btn:hover {
-            background-color: #43a047;
-        }
-
         .advert-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -109,7 +82,6 @@
             margin-top: 8px;
             text-align: right;
         }
-        /* Pagination */
 
         .pagination-container {
             position: fixed;
@@ -132,7 +104,9 @@
             font-weight: 500;
             background-color: #e2e8f0;
             color: #5a67d8;
+
         }
+
         .pagination a {
             text-decoration: none;
         }
@@ -141,8 +115,6 @@
             background-color: #e0c3fc;
             color: #fff;
         }
-
-
     </style>
 {% endblock %}
 
@@ -150,15 +122,7 @@
     <div class="">
 
         <!-- Header -->
-        <div class="header-row">
-            <h1>Browse My Adverts</h1>
-
-            {% if app.user %}
-                <a href="{{ path('app_advert_create') }}" class="create-btn">
-                    + Create Advert
-                </a>
-            {% endif %}
-        </div>
+        <h1>Browse Adverts</h1>
 
         <!-- Advert List -->
         <div class="advert-list">
@@ -191,5 +155,7 @@
             {{ knp_pagination_render(pagination) }}
         </div>
 
+
     </div>
+
 {% endblock %}

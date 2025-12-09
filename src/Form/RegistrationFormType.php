@@ -8,14 +8,44 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('username', TextType::class, [
+                'label' => 'Username',
+                'constraints' => [
+                    new NotBlank(['message' => 'Please enter a username']),
+                    new Length([
+                        'min' => 3,
+                        'max' => 50,
+                        'minMessage' => 'Username must be at least {{ limit }} characters',
+                    ]),
+                ],
+            ])
             ->add('email', EmailType::class)
-            ->add('password', PasswordType::class);
+            ->add('password', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'first_options' => ['label' => 'Password'],
+                'second_options' => ['label' => 'Confirm Password'],
+                'invalid_message' => 'The password fields must match.',
+                'mapped' => false, // so it’s not set automatically on User
+                'constraints' => [
+                    new NotBlank(['message' => 'Please enter a password']),
+                    new Length([
+                        'min' => 6,
+                        'max' => 4096,
+                        'minMessage' => 'Password must be at least {{ limit }} characters',
+                    ]),
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -23,7 +23,7 @@ security:
                 password_parameter: password
             logout:
                 path: app_logout
-                target: app_advert_index
+                target: app_public_adverts
 
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }

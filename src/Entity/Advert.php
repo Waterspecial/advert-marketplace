@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+
+use Symfony\Component\Uid\Uuid;
 use App\Repository\AdvertRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,9 +11,14 @@ use Doctrine\ORM\Mapping as ORM;
 class Advert
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: "string", length: 36, unique: true)]
+    private ?string $id = null;
+
+    public function __construct()
+    {
+        $this->id = Uuid::v4()->toRfc4122();
+        $this->createdAt = new \DateTimeImmutable();
+    }
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
@@ -38,7 +45,7 @@ class Advert
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageFile = null;
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
